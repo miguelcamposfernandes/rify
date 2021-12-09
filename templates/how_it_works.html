@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main class="mt-10">
+
+    <div class="mb-4 md:mb-0 w-full max-w-screen-md mx-auto relative" style="height: 24em;">
+      <div class="absolute left-0 bottom-0 w-full h-full z-10"
+        style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
+      <img src="/static/public/images/How it works.png" class="absolute left-0 top-0 w-full h-full z-0 object-cover" />
+      <div class="p-4 absolute bottom-0 left-0 z-20">
+        <h2 class="text-4xl font-bold text-gray-100 leading-tight font-poppins pb-4">
+          How it works - How are we approaching fake news detection?
+        </h2>
+      </div>
+    </div>
+
+    <div class="px-4 lg:px-0 mt-12 text-rify-text max-w-screen-md mx-auto text-lg leading-relaxed font-lora">
+      <p class="text-rify-title font-bold">The spread of misinformation has been a huge topic all over the globe,
+        and many indivuals and organizations are trying to come up with an effective solution towards this problem.</p>
+      <p class="pb-6">The far most common approach is to use machine learning, a branch of artificial intelligence,
+        to detect false information. In short the way it works is by taking lots of fake and real news,
+        to then try detect patterns. We also tried coming up with a acceptable solution using A.I,
+        but we ended up thinking of a new approach, which tries to replicate the human behaviour to some extent.</p>
+        
+      <h5 class="text-2xl font-poppins font-bold text-rify-title">Replicating the human behaviour</h5>
+      <p class="pb-6">When a news article seems to be dubious, we tend to make further research about that event.
+        We usually start by performing a Google Search and we then see, if other trustful news
+        publishers also are posting about event, and if that is the case it's probably true. <br>
+        And this is what our algorithm is trying to replicate:</p>
+
+      <h5 class="text-xl font-poppins font-bold text-rify-title">1. Perform a Google Search</h5>
+      <p class="pb-6">We start by taking the article's title inputted by the user to then perform a basic Google search.</p> 
+
+      <h5 class="text-xl font-poppins font-bold text-rify-title">2. Check if the sources are trustful</h5>
+      <p class="pb-6">We then take the first 10 results and compare each of them to a list of trustful news publishers we have for each country.</p>   
+
+      <h5 class="text-xl font-poppins font-bold text-rify-title">3. Compare the title similarity</h5>
+      <p>Of course it would not be enough to just check if the results are republished by trustful
+        sources, as Google always shows something no matter what you search. For example we tried searching
+        Trump ate a child in Google and the first 2 results were from considerable trustful news publishers:
+      </p>   
+      <img src="/static/public/images/google search experiment.png" alt="" class="py-2">
+      <p class="pb-6">So, to undergo this little issue, we just compare the setence similarity of the inputted news
+        title and the trustful news title. We do this by calculating the cosine similarity, which is easily done
+        by Python Natural-Language-Processing library, <a href="https://www.spacy.io/" class="bg-rify-yellow hover:bg-opacity-80 bg-opacity-50">Spacy</a>.
+      </p>
+
+      <h5 class="text-xl font-poppins font-bold text-rify-title">4. Output the result</h5>
+      <p>Finally we output the result based on these parameters:</p> 
+      <div class="border-l-4 border-gray-500 pl-4 mb-6 italic rounded mt-2">
+        <ul>
+            <li>
+                0 trustful sources <i class="fas fa-arrow-right"></i> unreliable with high certainty
+            </li>
+            <li>
+                1 trustful sources <i class="fas fa-arrow-right"></i> unreliable with low certainty
+            </li>
+            <li>
+                2 trustful sources <i class="fas fa-arrow-right"></i> reliable with low to medium certainty
+            </li>
+            <li>
+                3 trustful sources <i class="fas fa-arrow-right"></i> reliable with medium certainty
+            </li>
+            <li>
+                4 trustful sources <i class="fas fa-arrow-right"></i> reliable with high certainty
+            </li>
+            <li>
+                5+ trustful sources <i class="fas fa-arrow-right"></i> reliable with very high certainty
+            </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <!-- main ends here -->
+{% endblock content %}

@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main class="mt-10">
+
+    <div class="mb-4 md:mb-0 w-full max-w-screen-md mx-auto relative" style="height: 24em;">
+      <div class="absolute left-0 bottom-0 w-full h-full z-10"
+        style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
+      <img src="/static/public/images/Breaking down fake news.png" class="absolute left-0 top-0 w-full h-full z-0 object-cover" />
+      <div class="p-4 absolute bottom-0 left-0 z-20">
+        <h2 class="text-4xl font-bold text-gray-100 leading-tight font-poppins pb-4">
+          Breaking down misinformation - Different types of fake news
+        </h2>
+      </div>
+    </div>
+
+    <div class="px-4 lg:px-0 mt-12 text-rify-text max-w-screen-md mx-auto text-lg leading-relaxed font-lora">
+      <p class="pb-6">To better understand the misinformation ecosystem, we should break it down in different categories.
+        Many organizations already attempted that, and according to
+        <a href="https://firstdraftnews.org/articles/fake-news-complicated/" class="bg-rify-yellow hover:bg-opacity-80 bg-opacity-50">FirstDraftNews</a> 
+        it's divided in 7 groups:</p>
+
+      <img src="/static/public/images/7 types of misinformation.png" alt="">
+      <figcaption class="pb-6">7 types of mis- and disinformation by FirstDraftNews</figcaption>
+
+      <h5 class="text-2xl font-poppins font-bold text-rify-title">Satire or parody</h5>
+      <p class="pb-6">Misinformation created for satire or parody purposes, are those news an individual creates to perhaps
+        prank their peers. These information was not created to directly harm someone, but should be of course avoided as
+        people can have different interpretations.</p>
+        
+      <h5 class="text-2xl font-poppins font-bold text-rify-title">False connection</h5>
+      <p class="pb-6">False connections are very common, this is when for instance a photo is either outdated or
+        as nothing to do with the description/content.</p>  
+
+      <h5 class="text-2xl font-poppins font-bold text-rify-title">Imposter content</h5>
+      <p class="pb-6">This is when trustful sources are impersonated to seem more credible. For
+        example saying that this article is based on study <i>x</i> or that this article developed by credible individuals.</p> 
+
+      <h5 class="text-2xl font-poppins font-bold text-rify-title">Manipulated content</h5>
+      <p >Manipulated content is the act of manipulating information or imagery. For instance the
+        highly spread picture of Greta:</p>
+      <img src="/static/public/images/gefaelschtes-bild-greta-aufklebers.jpg" alt="" class="pb-6">    
+
+      <h5 class="text-2xl font-poppins font-bold text-rify-title">Fabricated content</h5>
+      <p >Finally, there is the fully fabricated and designed content, which only has the objective to cause harm and chaos.</p>
+    </div>
+  </main>
+  <!-- main ends here -->
+{% endblock content %}

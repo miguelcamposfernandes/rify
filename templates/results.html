@@ -1,0 +1,166 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <!-- Hero Section -->
+    <section class="pt-10 md:pt-20">
+        <div class="flex flex-col lg:flex-row lg:items-center">
+            <div class="flex-1">
+                <div class="relative">
+                    <h1 class="text-rify-title font-poppins font-bold text-5xl md:text-6xl lg:text-7xl sm:leading-tight md:leading-tight lg:leading-tight relative z-10">Fake news</h1>
+                    <div class="absolute px-32 md:px-40 lg:px-48
+                                h-4 sm:h-5 md:h-6 lg:h-7 -mt-6 md:-mt-8 lg:-mt-9
+                                opacity-60 -rotate-2 bg-rify-yellow">
+                      </div>
+                </div>
+                <h1 class="text-rify-title font-poppins font-bold text-5xl md:text-6xl lg:text-7xl sm:leading-tight md:leading-tight lg:leading-tight">detection is now <br> one click way</h1>
+            </div>
+            <div class="flex-1 mt-16 lg:mt-0">
+                <div class=" w-full rounded-3xl bg-gray-100">
+                  <h1 class="font-poppins font-bold text-rify-title text-3xl pl-8 pt-8">Try it out!</h1>
+                  <form action="" class="px-8 mt-10" method="POST">
+                    <input type="text" name="title" id="" class="w-full rounded-2xl shadow-sm focus:border-rify-yellow focus:ring-rify-yellow" placeholder="Enter the news title">  
+                    <select name="" id="" class="w-full rounded-2xl shadow-sm focus:border-rify-yellow focus:ring-rify-yellow mt-6">
+                      <option value="">Select the news publisher country</option>
+                      <option value="">Portugal</option>
+                      <option value="">Germany</option>
+                      <option value="">United Kingdom</option>
+                      <option value="">France</option>
+                    </select>
+                    <button class="font-poppins font-bold text-xl bg-rify-yellow hover:bg-yellow-400 rounded-lg py-3 px-7 mt-10 mb-8" id="btn">Submit</button>                
+                  </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Hero Section -->
+    <!-- Results Section -->
+    <div class="my-24 md:my-36" id="results">
+      <h2 class="font-poppins font-semibold text-rify-title text-5xl">Results</h2>
+      <p class="font-poppins font-medium text-black text-2xl mt-5 z-10">This article might be
+        {% if reliable == True %}
+            <span class="bg-green-400 z-0">reliable</span>
+        {% else %}
+            <span class="bg-red-400 z-0">unreliable</span>
+        {% endif %}
+        with <span class="bg-rify-yellow opacity-90 z-0">{{certainty}}</span> certainty. <br> </p>
+      {% if trustful_sources %}  
+        <span class="font-poppins font-medium text-black text-2xl z-10">However do the fact-checking on your own, here are some helpful sources:</span>
+        {% for sources in trustful_sources %}
+          <li class="font-poppins font-regular text-black text-lg mt-1">{{sources}}</li>
+        {% endfor %}
+      {% else %}
+        <span class="font-poppins font-medium text-black text-2xl z-10 mb-52">However do the fact-checking on your own.</span>
+      {% endif %}
+    </div>
+    <!-- End of Results section -->
+    <!-- Blog Section -->
+    <div class="mt-36">
+      <h2 class="font-poppins font-semibold text-rify-title text-5xl">Blog</h2>
+
+    <div class="mt-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-16">
+      <!--Card 1-->
+      <div class="rounded-xl overflow-hidden shadow-lg">
+          <img class="w-full" src="/static/public/images/best practices.png" alt="River">
+          <div class="px-6 py-4">
+            <div class="font-poppins font-semibold text-xl mb-2">Best practices to identify fake news</div>
+            <p class="font-lora font-normal text-rify-text text-base">
+              Never share anything without reading! We should always read beyond the title, this prevents us from sharing misinformation and old news, which ultimately also creates...
+            </p>
+          </div>
+          <div class="px-6 pt-2 pb-4">
+              <a href="/blog/best-practices" class="font-poppins font-medium bg-rify-yellow bg-opacity-80 hover:bg-opacity-100 text-lg text-rify-title">Read More</a>
+          </div>
+        </div>
+        <!--Card 2-->
+        <div class="rounded-xl overflow-hidden shadow-lg">
+          <img class="w-full" src="/static/public/images/How it works.png" alt="River">
+          <div class="px-6 py-4">
+            <div class="font-poppins font-semibold text-xl mb-2">How it works - How are we approaching fake news detection?</div>
+            <p class="font-lora font-normal text-rify-text text-base">
+              The spread of misinformation has been a huge topic all over the globe, and many indivuals and organizations are trying to come up with an effective solution...
+            </p>
+          </div>
+          <div class="px-6 pt-2 pb-4"">
+              <a href="/blog/how-it-works" class="font-poppins font-medium bg-rify-yellow hover:bg-opacity-100 bg-opacity-80 text-lg text-rify-title">Read More</a>
+          </div>
+        </div>
+
+      <!--Card 3-->
+      <div class="rounded-xl overflow-hidden shadow-lg">
+          <img class="w-full" src="/static/public/images/Breaking down fake news.png" alt="River">
+          <div class="px-6 py-4">
+            <div class="font-poppins font-semibold text-xl mb-2">Breaking down misinformation - Different types of fake news</div>
+            <p class="font-lora font-normal text-rify-text text-base">
+              To better understand the misinformation ecosystem, we should break it down in different categories. Many organizations already attempted that, and according to...
+            </p>
+          </div>
+          <div class="px-6 pt-2 pb-4">
+              <a href="/blog/breaking-down-misinformation" class="font-poppins font-medium bg-rify-yellow hover:bg-opacity-100 bg-opacity-80 text-lg text-rify-title">Read More</a>
+          </div>
+      </div>
+    </div>
+    <div class="flex justify-center">
+    <button class="font-poppins font-semibold text-xl text-rify-title p-3 bg-gray-100 hover:bg-gray-200 rounded-xl mt-8 duration-200">Browse All <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+    <!-- End of Blog Section -->
+    <!-- Results Modal -->
+    <div class="fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="loading">
+      <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <!--
+          Background overlay, show/hide based on modal state.
+    
+          Entering: "ease-out duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+    
+        <!-- This element is to trick the browser into centering the modal contents. -->
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+    
+        <!--
+          Modal panel, show/hide based on modal state.
+    
+          Entering: "ease-out duration-300"
+            From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            To: "opacity-100 translate-y-0 sm:scale-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100 translate-y-0 sm:scale-100"
+            To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        -->
+        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+          <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div class="sm:items-start">
+              <h3 class="font-poppins font-semibold text-2xl text-rify-title">We're working on it</h3>
+              <div class="flex justify-center">
+                <div
+                  class="animate-spin rounded-full h-28 w-28 border-b-2 border-gray-900 my-8"
+                ></div>
+              </div>
+              <div class="flex justify-center">
+                <h4 class="font-poppins font-normal text-xl text-black">Kindly wait a few seconds</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const btn = document.querySelector('#btn')
+        const loading = document.querySelector('#loading')
+
+        btn.addEventListener('click', () => {
+          loading.classList.remove('hidden')
+        })
+      })
+      $(document).ready(function (){
+        $('html, body').animate({
+          scrollTop: $('#results').offset().top
+        }, 'slow')
+      })
+    </script>
+    <!-- Results Modal End -->
+{% endblock content %}

@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <!-- Blog Section -->
+    <div class="mt-10">
+        <h2 class="font-poppins font-semibold text-rify-title text-5xl">Blog</h2>
+    
+      <div class="mt-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-16">
+        <!--Card 1-->
+        <div class="rounded-xl overflow-hidden shadow-lg">
+            <img class="w-full" src="/static/public/images/best practices.png" alt="River">
+            <div class="px-6 py-4">
+              <div class="font-poppins font-semibold text-xl mb-2">Best practices to identify fake news</div>
+              <p class="font-lora font-normal text-rify-text text-base">
+                Never share anything without reading! We should always read beyond the title, this prevents us from sharing misinformation and old news, which ultimately also creates...
+              </p>
+            </div>
+            <div class="px-6 pt-2 pb-4">
+                <a href="/blog/best-practices" class="font-poppins font-medium bg-rify-yellow bg-opacity-80 hover:bg-opacity-100 text-lg text-rify-title">Read More</a>
+            </div>
+          </div>
+        <!--Card 2-->
+        <div class="rounded-xl overflow-hidden shadow-lg">
+          <img class="w-full" src="/static/public/images/How it works.png" alt="River">
+          <div class="px-6 py-4">
+            <div class="font-poppins font-semibold text-xl mb-2">How it works - How are we approaching fake news detection?</div>
+            <p class="font-lora font-normal text-rify-text text-base">
+              The spread of misinformation has been a huge topic all over the globe, and many indivuals and organizations are trying to come up with an effective solution...
+            </p>
+          </div>
+          <div class="px-6 pt-2 pb-4"">
+              <a href="/blog/how-it-works" class="font-poppins font-medium bg-rify-yellow hover:bg-opacity-100 bg-opacity-80 text-lg text-rify-title">Read More</a>
+          </div>
+        </div>
+    
+        <!--Card 3-->
+        <div class="rounded-xl overflow-hidden shadow-lg">
+            <img class="w-full" src="/static/public/images/Breaking down fake news.png" alt="River">
+            <div class="px-6 py-4">
+              <div class="font-poppins font-semibold text-xl mb-2">Breaking down misinformation - Different types of fake news</div>
+              <p class="font-lora font-normal text-rify-text text-base">
+                To better understand the misinformation ecosystem, we should break it down in different categories. Many organizations already attempted that, and according to...
+              </p>
+            </div>
+            <div class="px-6 pt-2 pb-4">
+                <a href="/blog/breaking-down-misinformation" class="font-poppins font-medium bg-rify-yellow hover:bg-opacity-100 bg-opacity-80 text-lg text-rify-title">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="mt-10">  
+    <div class="mt-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-16">
+      <!--Card 1-->
+      <div class="rounded-xl overflow-hidden shadow-lg">
+        <img class="w-full" src="/static/public/images/Breaking down fake news - Different types of misinformation.png" alt="River">
+        <div class="px-6 py-4">
+          <div class="font-poppins font-semibold text-xl mb-2">But why? - What is the importance of identifying misinformation</div>
+          <p class="font-lora font-normal text-rify-text text-base">
+            As rumors and lies have killed in the past, there are also victims of misinformation on the media. Political parties are wrongfully...
+          </p>
+        </div>
+        <div class="px-6 pt-2 pb-4"">
+            <a href="blog/but-why" class="font-poppins font-medium bg-rify-yellow hover:bg-opacity-100 bg-opacity-80 text-lg text-rify-title">Read More</a>
+        </div>
+      </div>
+  </div>
+    <!-- End of Blog Section -->
+{% endblock content %}

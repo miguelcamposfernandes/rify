@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main class="mt-10">
+
+    <div class="mb-4 md:mb-0 w-full max-w-screen-md mx-auto relative" style="height: 24em;">
+      <div class="absolute left-0 bottom-0 w-full h-full z-10"
+        style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
+      <img src="/static/public/images/best practices.png" class="absolute left-0 top-0 w-full h-full z-0 object-cover" />
+      <div class="p-4 absolute bottom-0 left-0 z-20">
+        <h2 class="text-4xl font-bold text-gray-100 leading-tight font-poppins pb-4">
+          Best practices to identify fake news
+        </h2>
+      </div>
+    </div>
+
+    <div class="px-4 lg:px-0 mt-12 text-rify-text max-w-screen-md mx-auto text-lg leading-relaxed font-lora">
+      <h5 class="text-2xl font-poppins font-bold text-rify-title">1. Read</h5>
+      <p class="text-rify-title font-bold">Never share anything without reading!</p>
+      <p class="pb-6">Being critical is a skill you should adapt, not only for identifying misinformation but also for your day-to-day life.</p>
+        
+      <h5 class="text-2xl font-poppins font-bold text-rify-title">2. Be Critical</h5>
+      <p class="text-rify-title font-bold">It's too good to be true? Than it's probably fake.</p>
+      <p>We should always read beyond the title, this prevents us from sharing misinformation and old news, which ultimately also creates disinformation.</p>
+      <div class="border-l-4 border-gray-500 pl-4 mb-6 italic rounded mt-2">
+        <ul>
+            <li>
+                Can it be true information but decontextualized?
+            </li>
+            <li>
+                It is alarmist, sensationalist, improbable, without contradictory?
+            </li>
+            <li>
+                Who is the information for and what kind of reaction do they expect?
+            </li>
+            <li>
+                Who benefits from this content and who gets harmed?
+            </li>
+        </ul>
+      </div>
+
+      <h5 class="text-2xl font-poppins font-bold text-rify-title">3. Evaluate the source</h5>
+      <p class="text-rify-title font-bold">Search the origin!</p>
+      <p class="pb-6">Always try to track it down to the origin. And quickly evaluate their credibility and professionalism, towards the corresponding topic.</p> 
+
+      <h5 class="text-2xl font-poppins font-bold text-rify-title">4. Search other sources</h5>
+      <p class="text-rify-title font-bold">Perform a Google search</p>
+      <p class="pb-6">Quickly copy the news title and make a Google, Bing, Yandex or Baidu search to then compare it to other trustful sources, and make a conclusion.</p>   
+
+      <h5 class="text-2xl font-poppins font-bold text-rify-title">5. Search for verification</h5>
+      <p class="text-rify-title font-bold">Try Snopes or Bellingcat</p>
+      <p class="pb-6">Check if the information has already been denied/clarified or confirmed by some verification pages like
+        <a href="https://www.snopes.com/" class="bg-rify-yellow hover:bg-opacity-80 bg-opacity-50">Snopes</a>
+        or <a href="https://www.bellingcat.com/" class="bg-rify-yellow hover:bg-opacity-80 bg-opacity-50">bellingcat</a>.</p> 
+    </div>
+  </main>
+  <!-- main ends here -->
+{% endblock content %}
