@@ -82,5 +82,9 @@ def but_why():
 def best_practices():
     return render_template('best_practices.html')
 
+@app.route('/coming-soon')
+def coming_soon():
+    return render_template('coming-soon.html')
+
 if __name__ == '__main__': 
     app.run(debug=True, host='0.0.0.0')
